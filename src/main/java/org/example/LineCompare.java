@@ -1,7 +1,7 @@
 package org.example;
 
 /**
- *
+ *Line Compare program compares line lengths
  *
  */
 public class LineCompare
