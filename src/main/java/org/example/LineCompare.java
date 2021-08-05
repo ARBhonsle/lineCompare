@@ -37,8 +37,10 @@ public class LineCompare
             lineLength[1]=Math.sqrt(Math.pow(x[2]-x[3],2)+Math.pow(y[2]-y[3],2));
             if(lineLength[0]==lineLength[1]){
                 System.out.println("Line lengths are Equal");
-            }else{
-                System.out.println("Line lengths are not Equal");
+            }else if(lineLength[0]>lineLength[1]){
+                System.out.println("Line 1 length greater than Line 2");
+            }else {
+                System.out.println("Line 1 length less than Line 2");
             }
         }
     }
