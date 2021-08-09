@@ -11,22 +11,11 @@ import java.io.InputStreamReader;
  */
 public class LineCompare
 {
-    public static void main( String[] args ) throws IOException
-    {
-        System.out.println( "Welcome to Line Comparison Computation Program!" );
-        //variables
-        Double[] lineLength= new Double[2];
-        int[] x=new int[4];
-        int[] y=new int[4];
-        System.out.println("Give coordinates(x,y)");
-        BufferedReader read=new BufferedReader(new InputStreamReader(System.in));
-        for(int i=0;i<4;i++){
-            System.out.println((i%2+1)+"Line points:");
-            System.out.println((i+1)+"Point: x-coordinate");
-            x[i]=Integer.parseInt(read.readLine());
-            System.out.println((i+1)+"Point: y-coordinate");
-            y[i]=Integer.parseInt(read.readLine());
-        }
+    //variables
+    static Double[] lineLength= new Double[2];
+    static int[] x=new int[4];
+    static int[] y=new int[4];
+    static void lineInequalityCompare(){
         //line Inequality check
         lineLength[0]=Math.sqrt(Math.pow(x[0]-x[1],2)+Math.pow(y[0]-y[1],2));
         lineLength[1]=Math.sqrt(Math.pow(x[2]-x[3],2)+Math.pow(y[2]-y[3],2));
@@ -38,5 +27,19 @@ public class LineCompare
         }else {
             System.out.println("Line lengths are Equal");
         }
+    }
+    public static void main( String[] args ) throws IOException
+    {
+        System.out.println( "Welcome to Line Comparison Computation Program!" );
+        System.out.println("Give coordinates(x,y)");
+        BufferedReader read=new BufferedReader(new InputStreamReader(System.in));
+        for(int i=0;i<4;i++){
+            System.out.println((i%2+1)+"Line points:");
+            System.out.println((i+1)+"Point: x-coordinate");
+            x[i]=Integer.parseInt(read.readLine());
+            System.out.println((i+1)+"Point: y-coordinate");
+            y[i]=Integer.parseInt(read.readLine());
+        }
+        lineInequalityCompare();
     }
 }
